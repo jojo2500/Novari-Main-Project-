@@ -3,60 +3,399 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Novari - Home</title>
+    <meta name="description" content="Novari - Curated vintage clothing for the modern wardrobe. Shop unique pieces from women's, men's, and vintage collections.">
+    <meta name="keywords" content="vintage clothing, vintage fashion, curated fashion, sustainable fashion, vintage shop">
+    <meta name="author" content="Novari">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Novari - Vintage Clothing">
+    <meta property="og:description" content="Curated vintage clothing for the modern wardrobe">
+    <meta property="og:image" content="https://novari.com/images/og-image.jpg">
+    <meta property="og:url" content="https://novari.com">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style">
+    <link rel="preload" href="styles.css" as="style">
+    
+    <title>Novari - Vintage Clothing</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Novari",
+        "url": "https://novari.com",
+        "logo": "https://novari.com/images/logo.svg",
+        "description": "Curated vintage clothing for the modern wardrobe",
+        "sameAs": [
+            "https://instagram.com/novari",
+            "https://pinterest.com/novari",
+            "https://facebook.com/novari"
+        ]
+    }
+    </script>
 </head>
 <body>
+    <!-- Navigation Bar -->
+    <header class="header" role="banner">
+        <nav class="navbar navbar-expand-lg" role="navigation" aria-label="Main navigation">
+            <div class="container">
+                <!-- Logo/Brand -->
+                <a class="navbar-brand" href="index.html" aria-label="Novari Home">
+                    <div class="logo-wrapper">
+                        <svg class="svg-logo" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+                            <!-- Background shape -->
+                            <rect x="5" y="5" width="190" height="50" rx="10" fill="#f4e8d5" stroke="#d9c2a3" stroke-width="2"/>
+                            
+                            <!-- Main text -->
+                            <text x="100" y="35" font-family="'Playfair Display', serif" font-size="28" font-weight="700" text-anchor="middle" fill="#4e3d30">
+                                NOVARI
+                            </text>
+                            
+                            <!-- Subtitle -->
+                            <text x="100" y="48" font-family="'Montserrat', sans-serif" font-size="10" letter-spacing="2" text-anchor="middle" fill="#7a5f4b">
+                                VINTAGE
+                            </text>
+                            
+                            <!-- Decorative elements -->
+                            <path d="M30 20L40 30L30 40" stroke="#7a5f4b" stroke-width="1.5" fill="none"/>
+                            <path d="M170 20L160 30L170 40" stroke="#7a5f4b" stroke-width="1.5" fill="none"/>
+                        </svg>
+                        <span class="logo-subtitle">Curated Collections</span>
+                    </div>
+                </a>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">NOVARI</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav d-flex flex-row gap-4">
-                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
-                    <li class="nav-item"><a class="nav-link" href="cart.html">Cart <i class="fas fa-shopping-cart"></i></a></li>
-                    <li class="nav-item"><a class="nav-link" href="favorites.html">Favorites</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                    <li class="nav-item"><a class="nav-link" href="signup.html">Signup</a></li>
-                    <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
-                </ul>
+                <!-- Mobile Toggle Button -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" 
+                        aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars" aria-hidden="true"></i>
+                </button>
+
+                <!-- Navbar Content -->
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <!-- Search Bar (visible on desktop) -->
+                    <div class="search-container d-none d-lg-flex">
+                        <form class="search-form" role="search" action="/search" method="GET">
+                            <label for="desktop-search" class="visually-hidden">Search vintage pieces</label>
+                            <input type="search" id="desktop-search" class="search-input" name="q" 
+                                   placeholder="Search vintage pieces..." aria-label="Search vintage clothing"
+                                   minlength="2" required>
+                            <button type="submit" class="search-btn" aria-label="Search">
+                                <i class="fas fa-search" aria-hidden="true"></i>
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Navigation Links -->
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="womenDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Women
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="womenDropdown">
+                                <li><a class="dropdown-item" href="shop.html?category=women&subcategory=dresses">Dresses</a></li>
+                                <li><a class="dropdown-item" href="shop.html?category=women&subcategory=tops">Tops</a></li>
+                                <li><a class="dropdown-item" href="shop.html?category=women&subcategory=bottoms">Bottoms</a></li>
+                                <li><a class="dropdown-item" href="shop.html?category=women&subcategory=outerwear">Outerwear</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="shop.html?category=women">View All</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="menDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Men
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="menDropdown">
+                                <li><a class="dropdown-item" href="shop.html?category=men&subcategory=shirts">Shirts</a></li>
+                                <li><a class="dropdown-item" href="shop.html?category=men&subcategory=pants">Pants</a></li>
+                                <li><a class="dropdown-item" href="shop.html?category=men&subcategory=jackets">Jackets</a></li>
+                                <li><a class="dropdown-item" href="shop.html?category=men&subcategory=accessories">Accessories</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="shop.html?category=men">View All</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="shop.html?category=vintage">Vintage</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="shop.html?category=accessories">Accessories</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">Our Story</a>
+                        </li>
+                    </ul>
+
+                    <!-- Action Icons -->
+                    <div class="nav-actions">
+                        <a href="wishlist.html" class="nav-icon" title="Wishlist" aria-label="Wishlist (3 items)">
+                            <i class="far fa-heart" aria-hidden="true"></i>
+                            <span class="badge" aria-label="3 items in wishlist">3</span>
+                        </a>
+                        <a href="cart.html" class="nav-icon" title="Cart" aria-label="Shopping Cart (2 items)">
+                            <i class="fas fa-shopping-bag" aria-hidden="true"></i>
+                            <span class="badge" aria-label="2 items in cart">2</span>
+                        </a>
+                        <a href="account.html" class="nav-icon" title="Account" aria-label="Account">
+                            <i class="far fa-user" aria-hidden="true"></i>
+                        </a>
+                    </div>
+
+                    <!-- Mobile Search (hidden on desktop) -->
+                    <div class="search-container d-lg-none mt-3">
+                        <form class="search-form" role="search" action="/search" method="GET">
+                            <label for="mobile-search" class="visually-hidden">Search vintage pieces</label>
+                            <input type="search" id="mobile-search" class="search-input" name="q" 
+                                   placeholder="Search vintage pieces..." aria-label="Search vintage clothing"
+                                   minlength="2" required>
+                            <button type="submit" class="search-btn" aria-label="Search">
+                                <i class="fas fa-search" aria-hidden="true"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
             </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <header class="hero-section">
-        <div class="container text-center">
-            <h1>Welcome to Novari</h1>
-            <p>Fashion for the Modern Duo</p>
-            <a href="shop.html" class="btn btn-primary">Shop Now</a>
-        </div>
+        </nav>
     </header>
 
-    <!-- Featured Products -->
-    <main class="container py-5">
-        <h2 class="text-center mb-4">Featured Products</h2>
-        <div id="featured-products" class="row">
-            <!-- Products will be dynamically inserted here -->
-        </div>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-content">
+                <h1 id="hero-title">Curated Vintage Fashion</h1>
+                <p>Timeless pieces for your modern wardrobe</p>
+                <div class="hero-btns">
+                    <a href="shop.html" class="btn btn-primary">Shop Now</a>
+                    <a href="about.html" class="btn btn-outline">Our Story</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Categories -->
+        <section class="featured-categories" aria-labelledby="categories-title">
+            <div class="container">
+                <h2 id="categories-title" class="section-title">Shop By Category</h2>
+                <div class="categories-grid">
+                    <a href="shop.html?category=women" class="category-card">
+                        <div class="category-img" role="img" aria-label="Women's Collection"></div>
+                        <h3 class="category-title">Women's Collection</h3>
+                    </a>
+                    <a href="shop.html?category=men" class="category-card">
+                        <div class="category-img" role="img" aria-label="Men's Collection"></div>
+                        <h3 class="category-title">Men's Collection</h3>
+                    </a>
+                    <a href="shop.html?category=vintage" class="category-card">
+                        <div class="category-img" role="img" aria-label="Vintage Finds"></div>
+                        <h3 class="category-title">Vintage Finds</h3>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products -->
+        <section class="featured-products" aria-labelledby="products-title">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="products-title" class="section-title">New Arrivals</h2>
+                    <a href="shop.html" class="view-all">View All</a>
+                </div>
+                <div class="products-grid" role="list">
+                    <!-- Product Card 1 -->
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="https://images.unsplash.com/photo-1551232864-3f0890e580d9?w=600&auto=format" 
+                                 alt="Vintage Denim Jacket" 
+                                 class="product-image primary-image">
+                            <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&auto=format" 
+                                 alt="Vintage Denim Jacket Back View" 
+                                 class="product-image secondary-image">
+                            <button class="btn-wishlist" aria-label="Add to wishlist">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <button class="btn-quick-view" data-product-id="1" aria-label="Quick view">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <div class="product-badge">New</div>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Vintage Denim Jacket</h3>
+                            <div class="price">$89.99</div>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>(24)</span>
+                            </div>
+                            <button class="btn btn-primary btn-add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Product Card 2 -->
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="https://images.unsplash.com/photo-1520367445093-50dc08a59d9d?w=600&auto=format" 
+                                 alt="Retro Floral Dress" 
+                                 class="product-image primary-image">
+                            <img src="https://images.unsplash.com/photo-1520367445273-5a4e32f723a4?w=600&auto=format" 
+                                 alt="Retro Floral Dress Back View" 
+                                 class="product-image secondary-image">
+                            <button class="btn-wishlist" aria-label="Add to wishlist">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <button class="btn-quick-view" data-product-id="2" aria-label="Quick view">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <div class="product-badge">Sale</div>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Retro Floral Dress</h3>
+                            <div class="price">
+                                <span class="sale-price">$59.99</span>
+                                <span class="original-price">$79.99</span>
+                            </div>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>(18)</span>
+                            </div>
+                            <button class="btn btn-primary btn-add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Product Card 3 -->
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&auto=format" 
+                                 alt="Vintage Leather Bag" 
+                                 class="product-image primary-image">
+                            <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&auto=format" 
+                                 alt="Vintage Leather Bag Detail View" 
+                                 class="product-image secondary-image">
+                            <button class="btn-wishlist" aria-label="Add to wishlist">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <button class="btn-quick-view" data-product-id="3" aria-label="Quick view">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Vintage Leather Bag</h3>
+                            <div class="price">$129.99</div>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>(32)</span>
+                            </div>
+                            <button class="btn btn-primary btn-add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter -->
+        <section class="newsletter" aria-labelledby="newsletter-title">
+            <div class="container">
+                <div class="newsletter-content">
+                    <h3 id="newsletter-title">Join Our Community</h3>
+                    <p>Get 15% off your first order and early access to new collections</p>
+                    <form class="newsletter-form" action="/subscribe" method="POST" novalidate>
+                        <div class="form-group">
+                            <label for="email" class="visually-hidden">Email address</label>
+                            <div class="input-group">
+                                <input type="email" id="email" name="email" class="form-control" 
+                                       placeholder="Your email address" required
+                                       pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                       aria-describedby="email-help">
+                                <button type="submit" class="btn btn-primary">Subscribe</button>
+                            </div>
+                            <div id="email-help" class="form-text">We'll never share your email with anyone else.</div>
+                        </div>
+                    </form>
+                    <div class="newsletter-benefits">
+                        <div class="benefit-item">
+                            <i class="fas fa-tag"></i>
+                            <span>Exclusive Discounts</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-bell"></i>
+                            <span>New Arrival Alerts</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-gift"></i>
+                            <span>Birthday Rewards</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2023 Novari. All rights reserved.</p>
-        <p><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Novari</h4>
+                    <p>Curated vintage clothing for the modern wardrobe since 2015.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Follow us on Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Follow us on Pinterest"><i class="fab fa-pinterest" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Follow us on Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Shop</h4>
+                    <ul>
+                        <li><a href="shop.html?category=women">Women</a></li>
+                        <li><a href="shop.html?category=men">Men</a></li>
+                        <li><a href="shop.html?category=vintage">Vintage</a></li>
+                        <li><a href="shop.html?category=accessories">Accessories</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Help</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="faq.html">FAQs</a></li>
+                        <li><a href="shipping.html">Shipping & Returns</a></li>
+                        <li><a href="size-guide.html">Size Guide</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">Our Story</a></li>
+                        <li><a href="sustainability.html">Sustainability</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <time datetime="2023">2023</time> Novari. All rights reserved.</p>
+                <div class="legal-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
     </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom JS -->
-    <script src="script.js"></script>
+    <!-- Defer non-critical JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
