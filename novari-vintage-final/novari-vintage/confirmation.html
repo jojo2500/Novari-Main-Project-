@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Order confirmation for your purchase at Novari Vintage - Thank you for shopping with us.">
+    <title>Order Confirmation - Novari Vintage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header class="header" role="banner">
+        <nav class="navbar navbar-expand-lg" role="navigation" aria-label="Main navigation">
+            <div class="container">
+                <!-- Logo/Brand -->
+                <a class="navbar-brand" href="index.html" aria-label="Novari Home">
+                    <div class="logo-wrapper">
+                        <svg class="svg-logo" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+                            <!-- Background shape -->
+                            <rect x="5" y="5" width="190" height="50" rx="10" fill="#f4e8d5" stroke="#d9c2a3" stroke-width="2"/>
+                            
+                            <!-- Main text -->
+                            <text x="100" y="35" font-family="'Playfair Display', serif" font-size="28" font-weight="700" text-anchor="middle" fill="#4e3d30">
+                                NOVARI
+                            </text>
+                            
+                            <!-- Subtitle -->
+                            <text x="100" y="48" font-family="'Montserrat', sans-serif" font-size="10" letter-spacing="2" text-anchor="middle" fill="#7a5f4b">
+                                VINTAGE
+                            </text>
+                            
+                            <!-- Decorative elements -->
+                            <path d="M30 20L40 30L30 40" stroke="#7a5f4b" stroke-width="1.5" fill="none"/>
+                            <path d="M170 20L160 30L170 40" stroke="#7a5f4b" stroke-width="1.5" fill="none"/>
+                        </svg>
+                        <span class="logo-subtitle">Curated Collections</span>
+                    </div>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Checkout Header -->
+        <section class="checkout-header" style="background-color: #f9f5f0; padding: 30px 0; text-align: center;">
+            <div class="container">
+                <h1>Order Confirmation</h1>
+                <div class="cart-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-label">Cart</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-label">Shipping</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-label">Payment</div>
+                    </div>
+                    <div class="step active">
+                        <div class="step-number">4</div>
+                        <div class="step-label">Confirmation</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Confirmation Section -->
+        <section class="confirmation-section" style="padding: 60px 0;">
+            <div class="container">
+                <div class="confirmation-content" style="max-width: 800px; margin: 0 auto;">
+                    <div class="confirmation-header text-center mb-5">
+                        <div class="confirmation-icon" style="width: 80px; height: 80px; background: rgba(95, 122, 75, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                            <i class="fas fa-check" style="font-size: 2rem; color: #5f7a4b;"></i>
+                        </div>
+                        <h2 style="color: var(--secondary-color); margin-bottom: 15px;">Thank You for Your Order!</h2>
+                        <p class="lead">Your order has been received and is being processed.</p>
+                        <div class="order-info mt-3">
+                            <p><strong>Order Number:</strong> <span id="orderNumber">NV-23789456</span></p>
+                            <p><strong>Order Date:</strong> <span id="orderDate">April 13, 2023</span></p>
+                        </div>
+                    </div>
+                    
+                    <div class="confirmation-details" style="background: white; border-radius: 8px; padding: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); margin-bottom: 30px;">
+                        <h3 style="color: var(--secondary-color); margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #e8d9c0;">Order Details</h3>
+                        
+                        <div class="order-items">
+                            <div class="order-item" style="display: flex; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #f0f0f0;">
+                                <div class="order-item-image" style="width: 80px; height: 100px; border-radius: 4px; overflow: hidden; margin-right: 20px;">
+                                    <img src="https://images.unsplash.com/photo-1551232864-3f0890e580d9?w=150&auto=format" alt="Vintage Denim Jacket" style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                                <div class="order-item-details" style="flex-grow: 1;">
+                                    <h4 style="font-size: 1.1rem; margin-bottom: 5px; color: var(--secondary-color);">1980s Vintage Denim Jacket</h4>
+                                    <div style="font-size: 0.9rem; color: #6c757d; margin-bottom: 5px;">Size: M | Color: Classic Blue</div>
+                                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                                        <div style="font-size: 0.9rem;">Quantity: 1</div>
+                                        <div style="font-weight: 600; color: var(--primary-color);">$59.99</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="order-item" style="display: flex; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #f0f0f0;">
+                                <div class="order-item-image" style="width: 80px; height: 100px; border-radius: 4px; overflow: hidden; margin-right: 20px;">
+                                    <img src="https://images.unsplash.com/photo-1520367445093-50dc08a59d9d?w=150&auto=format" alt="Retro Floral Dress" style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                                <div class="order-item-details" style="flex-grow: 1;">
+                                    <h4 style="font-size: 1.1rem; margin-bottom: 5px; color: var(--secondary-color);">1970s Floral Maxi Dress</h4>
+                                    <div style="font-size: 0.9rem; color: #6c757d; margin-bottom: 5px;">Size: S | Color: Multi-color</div>
+                                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                                        <div style="font-size: 0.9rem;">Quantity: 1</div>
+                                        <div style="font-weight: 600; color: var(--primary-color);">$79.99</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="order-summary" style="margin-top: 20px;">
+                            <div class="summary-row" style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                <span>Subtotal</span>
+                                <span>$139.98</span>
+                            </div>
+                            <div class="summary-row" style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                <span>Shipping</span>
+                                <span>$5.99</span>
+                            </div>
+                            <div class="summary-row" style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                <span>Tax</span>
+                                <span>$11.20</span>
+                            </div>
+                            <div class="summary-row total" style="display: flex; justify-content: space-between; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e8d9c0; font-weight: 600; font-size: 1.1rem;">
+                                <span>Total</span>
+                                <span>$157.17</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <div class="shipping-info" style="background: white; border-radius: 8px; padding: 25px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); height: 100%;">
+                                <h3 style="color: var(--secondary-color); margin-bottom: 15px; font-size: 1.2rem;">Shipping Information</h3>
+                                <p style="margin-bottom: 5px;"><strong>John Doe</strong></p>
+                                <p style="margin-bottom: 5px;">123 Main Street</p>
+                                <p style="margin-bottom: 5px;">Apt 4B</p>
+                                <p style="margin-bottom: 5px;">New York, NY 10001</p>
+                                <p style="margin-bottom: 5px;">United States</p>
+                                <p style="margin-bottom: 0;"><strong>Method:</strong> Standard Shipping (3-5 business days)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6 mb-4">
+                            <div class="payment-info" style="background: white; border-radius: 8px; padding: 25px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); height: 100%;">
+                                <h3 style="color: var(--secondary-color); margin-bottom: 15px; font-size: 1.2rem;">Payment Information</h3>
+                                <p style="margin-bottom: 5px;"><strong>Payment Method:</strong> Credit Card</p>
+                                <p style="margin-bottom: 5px;"><strong>Card Type:</strong> Visa</p>
+                                <p style="margin-bottom: 5px;"><strong>Card Number:</strong> **** **** **** 1234</p>
+                                <p style="margin-bottom: 0;"><strong>Billing Address:</strong> Same as shipping address</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="next-steps" style="background: white; border-radius: 8px; padding: 25px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); margin-bottom: 30px;">
+                        <h3 style="color: var(--secondary-color); margin-bottom: 15px; font-size: 1.2rem;">What's Next?</h3>
+                        <ol style="padding-left: 20px;">
+                            <li style="margin-bottom: 10px;">You will receive an order confirmation email at <strong>john.doe@example.com</strong></li>
+                            <li style="margin-bottom: 10px;">Our team will carefully prepare your vintage items for shipment</li>
+                            <li style="margin-bottom: 10px;">You will receive a shipping confirmation email with tracking information when your order ships</li>
+                            <li style="margin-bottom: 0;">Enjoy your unique vintage pieces!</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="confirmation-actions text-center">
+                        <a href="index.html" class="btn btn-primary">Continue Shopping</a>
+                        <a href="account.html" class="btn btn-outline-secondary ms-3">View Order in Account</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Recommendations Section -->
+        <section class="recommendations-section" style="background-color: #f9f5f0; padding: 60px 0;">
+            <div class="container">
+                <h2 class="section-title">You Might Also Like</h2>
+                
+                <div class="row">
+                    <div class="col-6 col-md-3 mb-4">
+                        <div class="product-card">
+                            <div class="product-image-container">
+                                <img src="https://images.unsplash.com/photo-1548624313-0396c75e4b1a?w=300&auto=format" alt="Vintage Leather Bag" class="product-image primary-image">
+                                <img src="https://images.unsplash.com/photo-1548624313-0396c75e4b1a?w=300&auto=format" alt="Vintage Leather Bag - Alternate View" class="product-image secondary-image">
+                                <button class="btn-wishlist" aria-label="Add to wishlist">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                                <button class="btn-quick-view" aria-label="Quick view">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">Vintage Leather Bag</h3>
+                                <div class="price">$45.99</div>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span>(12)</span>
+                                </div>
+                                <button class="btn btn-primary btn-add-to-cart">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-6 col-md-3 mb-4">
+                        <div class="product-card">
+                            <div class="product-image-container">
+                                <img src="https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?w=300&auto=format" alt="Vintage Silk Scarf" class="product-image primary-image">
+                                <img src="https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?w=300&auto=format" alt="Vintage Silk Scarf - Alternate View" class="product-image secondary-image">
+                                <button class="btn-wishlist" aria-label="Add to wishlist">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                                <button class="btn-quick-view" aria-label="Quick view">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">Vintage Silk Scarf</h3>
+                                <div class="price">$29.99</div>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <span>(8)</span>
+                                </div>
+                                <button class="btn btn-primary btn-add-to-cart">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-6 col-md-3 mb-4">
+                        <div class="product-card">
+                            <div class="product-image-container">
+                                <img src="https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?w=300&auto=format" alt="Vintage Blazer" class="product-image primary-image">
+                                <img src="https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?w=300&auto=format" alt="Vintage Blazer - Alternate View" class="product-image secondary-image">
+                                <button class="btn-wishlist" aria-label="Add to wishlist">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                                <button class="btn-quick-view" aria-label="Quick view">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">Vintage Wool Blazer</h3>
+                                <div class="price">$89.99</div>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>(23)</span>
+                                </div>
+                                <button class="btn btn-primary btn-add-to-cart">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-6 col-md-3 mb-4">
+                        <div class="product-card">
+                            <div class="product-image-container">
+                                <img src="https://images.unsplash.com/photo-1551232864-3f0890e580d9?w=300&auto=format" alt="Vintage Hat" class="product-image primary-image">
+                                <img src="https://images.unsplash.com/photo-1551232864-3f0890e580d9?w=300&auto=format" alt="Vintage Hat - Alternate View" class="product-image secondary-image">
+                                <button class="btn-wishlist" aria-label="Add to wishlist">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                                <button class="btn-quick-view" aria-label="Quick view">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">Vintage Fedora Hat</h3>
+                                <div class="price">$34.99</div>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <i class="far fa-star"></i>
+                                    <span>(15)</span>
+                                </div>
+                                <button class="btn btn-primary btn-add-to-cart">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Novari</h4>
+                    <p>Curated vintage clothing for the modern wardrobe since 2015.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Follow us on Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Follow us on Pinterest"><i class="fab fa-pinterest" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Follow us on Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Shop</h4>
+                    <ul>
+                        <li><a href="shop.html?category=women">Women</a></li>
+                        <li><a href="shop.html?category=men">Men</a></li>
+                        <li><a href="shop.html?category=vintage">Vintage</a></li>
+                        <li><a href="shop.html?category=accessories">Accessories</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Help</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="faq.html">FAQs</a></li>
+                        <li><a href="shipping.html">Shipping & Returns</a></li>
+                        <li><a href="size-guide.html">Size Guide</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">Our Story</a></li>
+                        <li><a href="sustainability.html">Sustainability</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <time datetime="2023">2023</time> Novari. All rights reserved.</p>
+                <div class="legal-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+</body>
+</html>

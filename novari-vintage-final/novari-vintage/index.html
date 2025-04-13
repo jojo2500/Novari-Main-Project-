@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Novari Vintage - Curated vintage clothing for the modern wardrobe. Discover unique pieces with history and character.">
+    <title>Novari Vintage - Curated Vintage Clothing</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/toggle-consistency.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="header-top-left">
+                            <p><i class="fas fa-truck"></i> Free shipping on orders over $100</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="header-top-right">
+                            <ul class="header-top-menu">
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="account.html">My Account</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-middle">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-6">
+                        <div class="logo">
+                            <a href="index.html">
+                                <h1>NOVARI</h1>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 d-none d-md-block">
+                        <div class="search-form">
+                            <form action="shop.html" method="get">
+                                <input type="text" name="search" placeholder="Search for products..." class="search-input">
+                                <button type="submit"><i class="fas fa-search"></i></button>
+                            </form>
+                            <div class="search-suggestions"></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-6">
+                        <div class="header-actions">
+                            <a href="#" class="search-toggle d-md-none"><i class="fas fa-search"></i></a>
+                            <a href="account.html" class="nav-icon" title="Account"><i class="far fa-user"></i></a>
+                            <a href="favorites.html" class="nav-icon" title="Favorites"><i class="far fa-heart"></i><span class="favorites-count">0</span></a>
+                            <a href="cart.html" class="nav-icon" title="Cart"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
+                            <button class="menu-toggle d-lg-none"><i class="fas fa-bars"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-bottom">
+            <div class="container">
+                <nav class="main-nav">
+                    <ul class="main-menu">
+                        <li><a href="index.html" class="active">Home</a></li>
+                        <li><a href="shop.html?category=women">Women</a></li>
+                        <li><a href="shop.html?category=men">Men</a></li>
+                        <li><a href="shop.html?category=accessories">Accessories</a></li>
+                        <li><a href="shop.html">All Vintage</a></li>
+                        <li><a href="shop.html?onSale=true">Sale</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="container">
+            <ul class="mobile-menu-list">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="shop.html?category=women">Women</a></li>
+                <li><a href="shop.html?category=men">Men</a></li>
+                <li><a href="shop.html?category=accessories">Accessories</a></li>
+                <li><a href="shop.html">All Vintage</a></li>
+                <li><a href="shop.html?onSale=true">Sale</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="account.html">My Account</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <h1 class="hero-title">Timeless Style, <br>Vintage Soul</h1>
+                        <p class="hero-text">Discover our curated collection of authentic vintage clothing from the 1950s to the 1990s. Each piece tells a unique story and brings timeless style to your wardrobe.</p>
+                        <div class="hero-buttons">
+                            <a href="shop.html" class="btn btn-primary">Shop Now</a>
+                            <a href="about.html" class="btn btn-outline-primary">Our Story</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-image">
+                        <img src="https://source.unsplash.com/random/800x600/?vintage,clothing" alt="Vintage clothing collection" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Categories -->
+    <section class="featured-categories">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Shop by Category</h2>
+                <p class="section-subtitle">Explore our curated vintage collections</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="category-card">
+                        <div class="category-image">
+                            <img src="https://source.unsplash.com/random/600x800/?vintage,women" alt="Women's Vintage Collection">
+                            <div class="category-overlay"></div>
+                        </div>
+                        <div class="category-content">
+                            <h3 class="category-title">Women</h3>
+                            <a href="shop.html?category=women" class="category-link">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="category-card">
+                        <div class="category-image">
+                            <img src="https://source.unsplash.com/random/600x800/?vintage,men" alt="Men's Vintage Collection">
+                            <div class="category-overlay"></div>
+                        </div>
+                        <div class="category-content">
+                            <h3 class="category-title">Men</h3>
+                            <a href="shop.html?category=men" class="category-link">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="category-card">
+                        <div class="category-image">
+                            <img src="https://source.unsplash.com/random/600x800/?vintage,accessories" alt="Vintage Accessories">
+                            <div class="category-overlay"></div>
+                        </div>
+                        <div class="category-content">
+                            <h3 class="category-title">Accessories</h3>
+                            <a href="shop.html?category=accessories" class="category-link">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Products</h2>
+                <p class="section-subtitle">Handpicked vintage treasures</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="https://source.unsplash.com/random/800x1000/?vintage,dress" alt="1960s Mod Mini Dress" class="product-image">
+                            <button class="btn-wishlist" aria-label="Add to wishlist">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <button class="btn-quick-view" aria-label="Quick view">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title"><a href="product.html">1960s Mod Mini Dress</a></h3>
+                            <div class="price">$79.99</div>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>(19)</span>
+                            </div>
+                            <button class="btn btn-primary btn-add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="https://source.unsplash.com/random/800x1000/?vintage,jacket" alt="1980s Leather Biker Jacket" class="product-image">
+                            <div class="product-badge sale">Sale</div>
+                            <button class="btn-wishlist" aria-label="Add to wishlist">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <button class="btn-quick-view" aria-label="Quick view">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title"><a href="product.html">1980s Leather Biker Jacket</a></h3>
+                            <div class="price">
+                                <span class="sale-price">$129.99</span>
+                                <span class="original-price">$159.99</span>
+                            </div>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>(21)</span>
+                            </div>
+                            <button class="btn btn-primary btn-add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="https://source.unsplash.com/random/800x1000/?vintage,blouse" alt="1970s Silk Blouse" class="product-image">
+                            <div class="product-badge sale">Sale</div>
+                            <button class="btn-wishlist" aria-label="Add to wishlist">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <button class="btn-quick-view" aria-label="Quick view">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title"><a href="product.html">1970s Silk Blouse</a></h3>
+                            <div class="price">
+                                <span class="sale-price">$42.99</span>
+                                <span class="original-price">$54.99</span>
+                            </div>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>(12)</span>
+                            </div>
+                            <button class="btn btn-primary btn-add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="https://source.unsplash.com/random/800x1000/?vintage,hat" alt="1950s Fedora Hat" class="product-image">
+                            <button class="btn-wishlist" aria-label="Add to wishlist">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <button class="btn-quick-view" aria-label="Quick view">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title"><a href="product.html">1950s Fedora Hat</a></h3>
+                            <div class="price">$34.99</div>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <i class="far fa-star"></i>
+                                <span>(7)</span>
+                            </div>
+                            <button class="btn btn-primary btn-add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="shop.html" class="btn btn-outline-primary">View All Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vintage Eras -->
+    <section class="vintage-eras">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Shop by Era</h2>
+                <p class="section-subtitle">Explore fashion through the decades</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="era-card">
+                        <div class="era-image">
+                            <img src="https://source.unsplash.com/random/300x300/?vintage,1950s" alt="1950s Fashion">
+                        </div>
+                        <h3 class="era-title">1950s</h3>
+                        <a href="shop.html?era=1950s" class="era-link">Shop Now</a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="era-card">
+                        <div class="era-image">
+                            <img src="https://source.unsplash.com/random/300x300/?vintage,1960s" alt="1960s Fashion">
+                        </div>
+                        <h3 class="era-title">1960s</h3>
+                        <a href="shop.html?era=1960s" class="era-link">Shop Now</a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="era-card">
+                        <div class="era-image">
+                            <img src="https://source.unsplash.com/random/300x300/?vintage,1970s" alt="1970s Fashion">
+                        </div>
+                        <h3 class="era-title">1970s</h3>
+                        <a href="shop.html?era=1970s" class="era-link">Shop Now</a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="era-card">
+                        <div class="era-image">
+                            <img src="https://source.unsplash.com/random/300x300/?vintage,1980s" alt="1980s Fashion">
+                        </div>
+                        <h3 class="era-title">1980s</h3>
+                        <a href="shop.html?era=1980s" class="era-link">Shop Now</a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="era-card">
+                        <div class="era-image">
+                            <img src="https://source.unsplash.com/random/300x300/?vintage,1990s" alt="1990s Fashion">
+                        </div>
+                        <h3 class="era-title">1990s</h3>
+                        <a href="shop.html?era=1990s" class="era-link">Shop Now</a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="era-card">
+                        <div class="era-image">
+                            <img src="https://source.unsplash.com/random/300x300/?vintage,y2k" alt="Y2K Fashion">
+                        </div>
+                        <h3 class="era-title">Y2K</h3>
+                        <a href="shop.html?era=y2k" class="era-link">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="about-image">
+                        <img src="https://source.unsplash.com/random/600x800/?vintage,store" alt="Novari Vintage Store" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-content">
+                        <h2 class="about-title">Our Vintage Story</h2>
+                        <p class="about-text">At Novari Vintage, we believe that fashion should be sustainable, unique, and tell a story. Each piece in our collection has been carefully curated for its quality, character, and timeless appeal.</p>
+                        <p class="about-text">Our team of vintage enthusiasts travels the world to source authentic pieces from the 1950s to the 1990s, ensuring that every item meets our standards for condition and style.</p>
+                        <div class="about-features">
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Authentic vintage pieces</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Sustainable fashion choice</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Quality-checked garments</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Unique one-of-a-kind finds</span>
+                            </div>
+                        </div>
+                        <a href="about.html" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram Feed -->
+    <section class="instagram-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Follow Our Style</h2>
+                <p class="section-subtitle">@novarivintage on Instagram</p>
+            </div>
+            <div class="row instagram-feed">
+                <div class="col-lg-2 col-md-4 col-6">
+                    <a href="#" class="instagram-item">
+                        <img src="https://source.unsplash.com/random/300x300/?vintage,fashion,1" alt="Instagram Post" class="img-fluid">
+                        <div class="instagram-overlay">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <a href="#" class="instagram-item">
+                        <img src="https://source.unsplash.com/random/300x300/?vintage,fashion,2" alt="Instagram Post" class="img-fluid">
+                        <div class="instagram-overlay">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <a href="#" class="instagram-item">
+                        <img src="https://source.unsplash.com/random/300x300/?vintage,fashion,3" alt="Instagram Post" class="img-fluid">
+                        <div class="instagram-overlay">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <a href="#" class="instagram-item">
+                        <img src="https://source.unsplash.com/random/300x300/?vintage,fashion,4" alt="Instagram Post" class="img-fluid">
+                        <div class="instagram-overlay">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <a href="#" class="instagram-item">
+                        <img src="https://source.unsplash.com/random/300x300/?vintage,fashion,5" alt="Instagram Post" class="img-fluid">
+                        <div class="instagram-overlay">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <a href="#" class="instagram-item">
+                        <img src="https://source.unsplash.com/random/300x300/?vintage,fashion,6" alt="Instagram Post" class="img-fluid">
+                        <div class="instagram-overlay">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="newsletter-content">
+                            <h2 class="newsletter-title">Subscribe to Our Newsletter</h2>
+                            <p class="newsletter-text">Stay updated with our latest arrivals, vintage fashion tips, and exclusive offers.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <form class="newsletter-form">
+                            <div class="input-group">
+                                <input type="email" class="form-control" placeholder="Your email address" required>
+                                <button class="btn btn-primary" type="submit">Subscribe</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="benefits-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="benefit-item">
+                        <i class="fas fa-truck"></i>
+                        <h3>Free Shipping</h3>
+                        <p>On orders over $100</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="benefit-item">
+                        <i class="fas fa-undo"></i>
+                        <h3>Easy Returns</h3>
+                        <p>30-day return policy</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="benefit-item">
+                        <i class="fas fa-lock"></i>
+                        <h3>Secure Payment</h3>
+                        <p>100% secure checkout</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="benefit-item">
+                        <i class="fas fa-headset"></i>
+                        <h3>Dedicated Support</h3>
+                        <p>24/7 customer service</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="footer-widget">
+                            <div class="footer-logo">
+                                <h2>NOVARI</h2>
+                            </div>
+                            <p>Discover authentic vintage clothing and accessories from the 1950s to the 1990s. Each piece tells a unique story and brings timeless style to your wardrobe.</p>
+                            <div class="social-icons">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6">
+                        <div class="footer-widget">
+                            <h4 class="widget-title">Shop</h4>
+                            <ul class="widget-list">
+                                <li><a href="shop.html?category=women">Women</a></li>
+                                <li><a href="shop.html?category=men">Men</a></li>
+                                <li><a href="shop.html?category=accessories">Accessories</a></li>
+                                <li><a href="shop.html?newArrivals=true">New Arrivals</a></li>
+                                <li><a href="shop.html?onSale=true">Sale</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6">
+                        <div class="footer-widget">
+                            <h4 class="widget-title">Information</h4>
+                            <ul class="widget-list">
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="contact.html">Contact Us</a></li>
+                                <li><a href="#">Shipping & Returns</a></li>
+                                <li><a href="#">Terms & Conditions</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="footer-widget">
+                            <h4 class="widget-title">Newsletter</h4>
+                            <p>Subscribe to our newsletter to receive updates on new arrivals, special offers and vintage fashion tips.</p>
+                            <form class="newsletter-form">
+                                <div class="input-group">
+                                    <input type="email" class="form-control" placeholder="Your email address" required>
+                                    <button class="btn btn-primary" type="submit">Subscribe</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-6">
+                        <p class="copyright">© 2025 Novari Vintage. All rights reserved.</p>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="payment-methods">
+                            <img src="https://via.placeholder.com/250x30" alt="Payment Methods">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Quick View Modal -->
+    <div class="modal fade" id="quickViewModal" tabindex="-1" aria-labelledby="quickViewModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="quickViewModalLabel">Product Quick View</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="quick-view-image">
+                                <img src="" alt="Product Image" id="quickViewImage" class="img-fluid">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="quick-view-content">
+                                <h2 id="quickViewTitle"></h2>
+                                <div class="quick-view-price" id="quickViewPrice"></div>
+                                <div class="quick-view-rating" id="quickViewRating"></div>
+                                <div class="quick-view-description" id="quickViewDescription"></div>
+                                <div class="quick-view-options">
+                                    <div class="size-options mb-3">
+                                        <h6>Size:</h6>
+                                        <div class="size-selector" id="quickViewSizes"></div>
+                                    </div>
+                                    <div class="color-options mb-3">
+                                        <h6>Color:</h6>
+                                        <div class="color-selector" id="quickViewColors"></div>
+                                    </div>
+                                    <div class="quantity-options mb-3">
+                                        <h6>Quantity:</h6>
+                                        <div class="quantity-selector">
+                                            <button class="quantity-decrease">-</button>
+                                            <input type="number" value="1" min="1" max="10" id="quickViewQuantity">
+                                            <button class="quantity-increase">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="quick-view-actions">
+                                    <button class="btn btn-primary btn-add-to-cart-modal" id="quickViewAddToCart">Add to Cart</button>
+                                    <button class="btn btn-outline-primary btn-view-details" id="quickViewDetails">View Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" id="addToCartToast">
+            <div class="toast-header">
+                <i class="fas fa-shopping-cart me-2 text-primary"></i>
+                <strong class="me-auto">Novari Vintage</strong>
+                <small>Just now</small>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                Item added to your cart successfully!
+            </div>
+        </div>
+        <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" id="addToWishlistToast">
+            <div class="toast-header">
+                <i class="fas fa-heart me-2 text-danger"></i>
+                <strong class="me-auto">Novari Vintage</strong>
+                <small>Just now</small>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                Item added to your wishlist!
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

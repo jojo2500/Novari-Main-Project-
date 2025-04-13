@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete your purchase of curated vintage clothing at Novari Vintage - Secure payment process.">
+    <title>Payment - Novari Vintage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header class="header" role="banner">
+        <nav class="navbar navbar-expand-lg" role="navigation" aria-label="Main navigation">
+            <div class="container">
+                <!-- Logo/Brand -->
+                <a class="navbar-brand" href="index.html" aria-label="Novari Home">
+                    <div class="logo-wrapper">
+                        <svg class="svg-logo" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+                            <!-- Background shape -->
+                            <rect x="5" y="5" width="190" height="50" rx="10" fill="#f4e8d5" stroke="#d9c2a3" stroke-width="2"/>
+                            
+                            <!-- Main text -->
+                            <text x="100" y="35" font-family="'Playfair Display', serif" font-size="28" font-weight="700" text-anchor="middle" fill="#4e3d30">
+                                NOVARI
+                            </text>
+                            
+                            <!-- Subtitle -->
+                            <text x="100" y="48" font-family="'Montserrat', sans-serif" font-size="10" letter-spacing="2" text-anchor="middle" fill="#7a5f4b">
+                                VINTAGE
+                            </text>
+                            
+                            <!-- Decorative elements -->
+                            <path d="M30 20L40 30L30 40" stroke="#7a5f4b" stroke-width="1.5" fill="none"/>
+                            <path d="M170 20L160 30L170 40" stroke="#7a5f4b" stroke-width="1.5" fill="none"/>
+                        </svg>
+                        <span class="logo-subtitle">Curated Collections</span>
+                    </div>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Checkout Header -->
+        <section class="checkout-header" style="background-color: #f9f5f0; padding: 30px 0; text-align: center;">
+            <div class="container">
+                <h1>Secure Checkout</h1>
+                <div class="cart-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-label">Cart</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-label">Shipping</div>
+                    </div>
+                    <div class="step active">
+                        <div class="step-number">3</div>
+                        <div class="step-label">Payment</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-label">Confirmation</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Payment Section -->
+        <section class="checkout-section">
+            <div class="container">
+                <div class="checkout-container">
+                    <div class="checkout-form">
+                        <h2>Payment Information</h2>
+                        
+                        <form id="paymentForm" class="needs-validation" novalidate>
+                            <div class="form-section">
+                                <h3>Payment Method</h3>
+                                <div class="payment-methods">
+                                    <div class="payment-method active" data-method="credit-card">
+                                        <img src="https://via.placeholder.com/60x40?text=Credit+Card" alt="Credit Card">
+                                        <p>Credit Card</p>
+                                    </div>
+                                    <div class="payment-method" data-method="paypal">
+                                        <img src="https://via.placeholder.com/60x40?text=PayPal" alt="PayPal">
+                                        <p>PayPal</p>
+                                    </div>
+                                    <div class="payment-method" data-method="apple-pay">
+                                        <img src="https://via.placeholder.com/60x40?text=Apple+Pay" alt="Apple Pay">
+                                        <p>Apple Pay</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Credit Card Form (default visible) -->
+                            <div class="payment-form" id="credit-card-form">
+                                <div class="form-section">
+                                    <h3>Card Details</h3>
+                                    <div class="form-group">
+                                        <label for="cardName" class="form-label">Name on Card*</label>
+                                        <input type="text" id="cardName" class="form-control" required>
+                                        <div class="invalid-feedback">Please enter the name on your card</div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="cardNumber" class="form-label">Card Number*</label>
+                                        <div class="input-group">
+                                            <input type="text" id="cardNumber" class="form-control" placeholder="XXXX XXXX XXXX XXXX" required>
+                                            <span class="input-group-text">
+                                                <i class="fab fa-cc-visa"></i>
+                                                <i class="fab fa-cc-mastercard"></i>
+                                                <i class="fab fa-cc-amex"></i>
+                                            </span>
+                                        </div>
+                                        <div class="invalid-feedback">Please enter a valid card number</div>
+                                    </div>
+                                    
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="expiryDate" class="form-label">Expiry Date*</label>
+                                            <input type="text" id="expiryDate" class="form-control" placeholder="MM/YY" required>
+                                            <div class="invalid-feedback">Please enter a valid expiry date</div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="cvv" class="form-label">CVV*</label>
+                                            <input type="text" id="cvv" class="form-control" placeholder="XXX" required>
+                                            <div class="invalid-feedback">Please enter your CVV</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-section">
+                                    <h3>Billing Address</h3>
+                                    <div class="form-check mb-3">
+                                        <input class="form-check-input" type="checkbox" id="sameAsShipping" checked>
+                                        <label class="form-check-label" for="sameAsShipping">
+                                            Same as shipping address
+                                        </label>
+                                    </div>
+                                    
+                                    <!-- Billing address form (initially hidden) -->
+                                    <div id="billingAddressForm" style="display: none;">
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                <label for="billingFirstName" class="form-label">First Name*</label>
+                                                <input type="text" id="billingFirstName" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="billingLastName" class="form-label">Last Name*</label>
+                                                <input type="text" id="billingLastName" class="form-control">
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="billingAddress1" class="form-label">Address Line 1*</label>
+                                            <input type="text" id="billingAddress1" class="form-control">
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="billingAddress2" class="form-label">Address Line 2</label>
+                                            <input type="text" id="billingAddress2" class="form-control">
+                                        </div>
+                                        
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                <label for="billingCity" class="form-label">City*</label>
+                                                <input type="text" id="billingCity" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="billingState" class="form-label">State/Province*</label>
+                                                <input type="text" id="billingState" class="form-control">
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                <label for="billingZipCode" class="form-label">Zip/Postal Code*</label>
+                                                <input type="text" id="billingZipCode" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="billingCountry" class="form-label">Country*</label>
+                                                <select id="billingCountry" class="form-control">
+                                                    <option value="" selected disabled>Select Country</option>
+                                                    <option value="US">United States</option>
+                                                    <option value="CA">Canada</option>
+                                                    <option value="UK">United Kingdom</option>
+                                                    <option value="AU">Australia</option>
+                                                    <!-- More countries would be added here -->
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- PayPal Form (initially hidden) -->
+                            <div class="payment-form" id="paypal-form" style="display: none;">
+                                <div class="paypal-info text-center p-4">
+                                    <img src="https://via.placeholder.com/200x80?text=PayPal+Logo" alt="PayPal" class="mb-3">
+                                    <p>You will be redirected to PayPal to complete your payment securely.</p>
+                                    <p class="small text-muted">Note: You don't need a PayPal account to pay with your credit card through PayPal.</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Apple Pay Form (initially hidden) -->
+                            <div class="payment-form" id="apple-pay-form" style="display: none;">
+                                <div class="apple-pay-info text-center p-4">
+                                    <img src="https://via.placeholder.com/200x80?text=Apple+Pay+Logo" alt="Apple Pay" class="mb-3">
+                                    <p>You will be prompted to complete your payment using Apple Pay.</p>
+                                    <p class="small text-muted">Note: Apple Pay is only available on compatible devices.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="form-section">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="savePaymentInfo">
+                                    <label class="form-check-label" for="savePaymentInfo">
+                                        Save this payment information for future purchases
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="form-actions" style="display: flex; justify-content: space-between; margin-top: 30px;">
+                                <a href="checkout.html" class="btn btn-outline-secondary">
+                                    <i class="fas fa-arrow-left"></i> Back to Shipping
+                                </a>
+                                <a href="confirmation.html" class="btn btn-primary" id="placeOrder">
+                                    Place Order <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <div class="checkout-summary">
+                        <h3>Order Summary</h3>
+                        
+                        <div class="checkout-items">
+                            <div class="checkout-item">
+                                <div class="checkout-item-image">
+                                    <img src="https://images.unsplash.com/photo-1551232864-3f0890e580d9?w=150&auto=format" alt="Vintage Denim Jacket">
+                                </div>
+                                <div class="checkout-item-details">
+                                    <h4 class="checkout-item-title">1980s Vintage Denim Jacket</h4>
+                                    <div class="checkout-item-options">Size: M | Color: Classic Blue</div>
+                                    <div class="checkout-item-price">$59.99 × 1</div>
+                                </div>
+                            </div>
+                            
+                            <div class="checkout-item">
+                                <div class="checkout-item-image">
+                                    <img src="https://images.unsplash.com/photo-1520367445093-50dc08a59d9d?w=150&auto=format" alt="Retro Floral Dress">
+                                </div>
+                                <div class="checkout-item-details">
+                                    <h4 class="checkout-item-title">1970s Floral Maxi Dress</h4>
+                                    <div class="checkout-item-options">Size: S | Color: Multi-color</div>
+                                    <div class="checkout-item-price">$79.99 × 1</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="summary-row">
+                            <span>Subtotal</span>
+                            <span>$139.98</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Shipping</span>
+                            <span>$5.99</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Tax</span>
+                            <span>$11.20</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>Total</span>
+                            <span>$157.17</span>
+                        </div>
+                        
+                        <div class="secure-checkout-info" style="margin-top: 20px; text-align: center;">
+                            <div style="margin-bottom: 10px;"><i class="fas fa-lock"></i> Secure Payment</div>
+                            <p class="small text-muted">Your payment information is encrypted and secure. We never store your full credit card details.</p>
+                            <img src="https://via.placeholder.com/250x30?text=Payment+Methods" alt="Accepted payment methods" style="max-width: 100%;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (Simplified for checkout) -->
+    <footer class="footer" style="padding: 20px 0; margin-top: 40px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2023 Novari Vintage. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-end">
+                    <a href="privacy.html" class="me-3">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Form Validation Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Form validation
+            const paymentForm = document.getElementById('paymentForm');
+            const placeOrderBtn = document.getElementById('placeOrder');
+            
+            if (placeOrderBtn) {
+                placeOrderBtn.addEventListener('click', function(event) {
+                    // Only validate if credit card form is visible
+                    if (document.getElementById('credit-card-form').style.display !== 'none') {
+                        if (!paymentForm.checkValidity()) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                            
+                            // Scroll to the first invalid field
+                            const firstInvalid = paymentForm.querySelector(':invalid');
+                            if (firstInvalid) {
+                                firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                            }
+                        }
+                        
+                        paymentForm.classList.add('was-validated');
+                    }
+                });
+            }
+            
+            // Payment method selection
+            const paymentMethods = document.querySelectorAll('.payment-method');
+            const paymentForms = document.querySelectorAll('.payment-form');
+            
+            if (paymentMethods.length) {
+                paymentMethods.forEach(method => {
+                    method.addEventListener('click', function() {
+                        // Remove active class from all methods
+                        paymentMethods.forEach(m => m.classList.remove('active'));
+                        
+                        // Add active class to clicked method
+                        this.classList.add('active');
+                        
+                        // Hide all payment forms
+                        paymentForms.forEach(form => form.style.display = 'none');
+                        
+                        // Show selected payment form
+                        const selectedMethod = this.getAttribute('data-method');
+                        document.getElementById(selectedMethod + '-form').style.display = 'block';
+                        
+                        // Reset validation if switching away from credit card
+                        if (selectedMethod !== 'credit-card') {
+                            paymentForm.classList.remove('was-validated');
+                        }
+                    });
+                });
+            }
+            
+            // Billing address toggle
+            const sameAsShippingCheckbox = document.getElementById('sameAsShipping');
+            const billingAddressForm = document.getElementById('billingAddressForm');
+            
+            if (sameAsShippingCheckbox && billingAddressForm) {
+                sameAsShippingCheckbox.addEventListener('change', function() {
+                    billingAddressForm.style.display = this.checked ? 'none' : 'block';
+                    
+                    // Toggle required attribute on billing fields
+                    const billingInputs = billingAddressForm.querySelectorAll('input, select');
+                    billingInputs.forEach(input => {
+                        input.required = !this.checked;
+                    });
+                });
+            }
+            
+            // Format credit card input
+            const cardNumberInput = document.getElementById('cardNumber');
+            if (cardNumberInput) {
+                cardNumberInput.addEventListener('input', function(e) {
+                    let value = e.target.value.replace(/\D/g, '');
+                    if (value.length > 16) value = value.slice(0, 16);
+                    
+                    // Add spaces every 4 digits
+                    let formattedValue = '';
+                    for (let i = 0; i < value.length; i++) {
+                        if (i > 0 && i % 4 === 0) {
+                            formattedValue += ' ';
+                        }
+                        formattedValue += value[i];
+                    }
+                    
+                    e.target.value = formattedValue;
+                });
+            }
+            
+            // Format expiry date input
+            const expiryDateInput = document.getElementById('expiryDate');
+            if (expiryDateInput) {
+                expiryDateInput.addEventListener('input', function(e) {
+                    let value = e.target.value.replace(/\D/g, '');
+                    if (value.length > 4) value = value.slice(0, 4);
+                    
+                    // Format as MM/YY
+                    if (value.length > 2) {
+                        value = value.slice(0, 2) + '/' + value.slice(2);
+                    }
+                    
+                    e.target.value = value;
+                });
+            }
+            
+            // Format CVV input
+            const cvvInput = document.getElementById('cvv');
+            if (cvvInput) {
+                cvvInput.addEventListener('input', function(e) {
+                    let value = e.target.value.replace(/\D/g, '');
+                    if (value.length > 4) value = value.slice(0, 4);
+                    e.target.value = value;
+                });
+            }
+        });
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

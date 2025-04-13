@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account | Novari Vintage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/toggle-consistency.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="header-top-left">
+                            <p><i class="fas fa-truck"></i> Free shipping on orders over $100</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="header-top-right">
+                            <ul class="header-top-menu">
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="account.html">My Account</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-middle">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-6">
+                        <div class="logo">
+                            <a href="index.html">
+                                <h1>NOVARI</h1>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 d-none d-md-block">
+                        <div class="search-form">
+                            <form action="shop.html" method="get">
+                                <input type="text" name="search" placeholder="Search for products..." class="search-input">
+                                <button type="submit"><i class="fas fa-search"></i></button>
+                            </form>
+                            <div class="search-suggestions"></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-6">
+                        <div class="header-actions">
+                            <a href="#" class="search-toggle d-md-none"><i class="fas fa-search"></i></a>
+                            <a href="account.html" class="nav-icon" title="Account"><i class="far fa-user"></i></a>
+                            <a href="favorites.html" class="nav-icon" title="Favorites"><i class="far fa-heart"></i><span class="favorites-count">0</span></a>
+                            <a href="cart.html" class="nav-icon" title="Cart"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
+                            <button class="menu-toggle d-lg-none"><i class="fas fa-bars"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-bottom">
+            <div class="container">
+                <nav class="main-nav">
+                    <ul class="main-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html?category=women">Women</a></li>
+                        <li><a href="shop.html?category=men">Men</a></li>
+                        <li><a href="shop.html?category=accessories">Accessories</a></li>
+                        <li><a href="shop.html">All Vintage</a></li>
+                        <li><a href="shop.html?onSale=true">Sale</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="container">
+            <ul class="mobile-menu-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html?category=women">Women</a></li>
+                <li><a href="shop.html?category=men">Men</a></li>
+                <li><a href="shop.html?category=accessories">Accessories</a></li>
+                <li><a href="shop.html">All Vintage</a></li>
+                <li><a href="shop.html?onSale=true">Sale</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="account.html">My Account</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="account-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="page-title">
+                        <h1>My Account</h1>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Login/Register Section -->
+            <div id="loginRegisterSection">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="account-tabs">
+                            <ul class="nav nav-tabs" id="accountTabs" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="login-tab" data-bs-toggle="tab" data-bs-target="#login-tab-pane" type="button" role="tab" aria-controls="login-tab-pane" aria-selected="true">Login</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="register-tab" data-bs-toggle="tab" data-bs-target="#register-tab-pane" type="button" role="tab" aria-controls="register-tab-pane" aria-selected="false">Register</button>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="accountTabsContent">
+                                <div class="tab-pane fade show active" id="login-tab-pane" role="tabpanel" aria-labelledby="login-tab" tabindex="0">
+                                    <div class="login-form-container">
+                                        <form id="loginForm">
+                                            <div class="mb-3">
+                                                <label for="loginEmail" class="form-label">Email address</label>
+                                                <input type="email" class="form-control" id="loginEmail" required>
+                                                <div class="form-text">Try admin@novari.com / admin123 for admin access</div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="loginPassword" class="form-label">Password</label>
+                                                <input type="password" class="form-control" id="loginPassword" required>
+                                            </div>
+                                            <div class="mb-3 form-check">
+                                                <input type="checkbox" class="form-check-input" id="rememberMe">
+                                                <label class="form-check-label" for="rememberMe">Remember me</label>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary">Login</button>
+                                            <div class="mt-3">
+                                                <a href="#" class="forgot-password">Forgot your password?</a>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="register-tab-pane" role="tabpanel" aria-labelledby="register-tab" tabindex="0">
+                                    <div class="register-form-container">
+                                        <form id="registerForm">
+                                            <div class="row">
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="firstName" class="form-label">First Name</label>
+                                                    <input type="text" class="form-control" id="firstName" required>
+                                                </div>
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="lastName" class="form-label">Last Name</label>
+                                                    <input type="text" class="form-control" id="lastName" required>
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="registerEmail" class="form-label">Email address</label>
+                                                <input type="email" class="form-control" id="registerEmail" required>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="registerPassword" class="form-label">Password</label>
+                                                <input type="password" class="form-control" id="registerPassword" required>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="confirmPassword" class="form-label">Confirm Password</label>
+                                                <input type="password" class="form-control" id="confirmPassword" required>
+                                            </div>
+                                            <div class="mb-3 form-check">
+                                                <input type="checkbox" class="form-check-input" id="termsAgree" required>
+                                                <label class="form-check-label" for="termsAgree">I agree to the <a href="#">Terms and Conditions</a></label>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary">Register</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Account Dashboard -->
+            <div id="accountDashboard" style="display: none;">
+                <div class="row">
+                    <div class="col-lg-3 col-md-4">
+                        <div class="account-sidebar">
+                            <div class="account-user">
+                                <div class="user-avatar">
+                                    <span class="avatar-placeholder"></span>
+                                </div>
+                                <div class="user-info">
+                                    <h4 class="user-name">John Doe</h4>
+                                    <p class="user-email">john.doe@example.com</p>
+                                    <span class="role-badge badge bg-success">Customer</span>
+                                </div>
+                            </div>
+                            <ul class="account-menu">
+                                <li><a href="#" class="active" data-section="dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                                <li><a href="#" data-section="orders"><i class="fas fa-shopping-bag"></i> Orders</a></li>
+                                <li><a href="#" data-section="addresses"><i class="fas fa-map-marker-alt"></i> Addresses</a></li>
+                                <li><a href="#" data-section="wishlist"><i class="fas fa-heart"></i> Wishlist</a></li>
+                                <li><a href="#" data-section="account-details"><i class="fas fa-user"></i> Account Details</a></li>
+                                <li><a href="#" data-section="admin" style="display: none;"><i class="fas fa-cog"></i> Admin Dashboard</a></li>
+                                <li><a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-9 col-md-8">
+                        <div class="account-content">
+                            <!-- Dashboard Section -->
+                            <div class="account-section active" id="dashboard-section">
+                                <div class="section-header">
+                                    <h2>Dashboard</h2>
+                                </div>
+                                <div class="dashboard-welcome">
+                                    <p>Hello <span class="user-name">John</span> (not <span class="user-name">John</span>? <a href="#" id="logoutLink">Log out</a>)</p>
+                                    <p>From your account dashboard you can view your recent orders, manage your shipping and billing addresses, and edit your password and account details.</p>
+                                </div>
+                                <div class="dashboard-stats">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="stat-card">
+                                                <div class="stat-icon">
+                                                    <i class="fas fa-shopping-bag"></i>
+                                                </div>
+                                                <div class="stat-info">
+                                                    <h3>3</h3>
+                                                    <p>Orders</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="stat-card">
+                                                <div class="stat-icon">
+                                                    <i class="fas fa-heart"></i>
+                                                </div>
+                                                <div class="stat-info">
+                                                    <h3>5</h3>
+                                                    <p>Wishlist Items</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="stat-card">
+                                                <div class="stat-icon">
+                                                    <i class="fas fa-map-marker-alt"></i>
+                                                </div>
+                                                <div class="stat-info">
+                                                    <h3>2</h3>
+                                                    <p>Addresses</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="recent-orders">
+                                    <h3>Recent Orders</h3>
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Order</th>
+                                                    <th>Date</th>
+                                                    <th>Status</th>
+                                                    <th>Total</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>#12345</td>
+                                                    <td>March 15, 2025</td>
+                                                    <td><span class="badge bg-success">Completed</span></td>
+                                                    <td>$125.00</td>
+                                                    <td><a href="#" class="btn btn-sm btn-outline-primary">View</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>#12346</td>
+                                                    <td>March 20, 2025</td>
+                                                    <td><span class="badge bg-warning">Processing</span></td>
+                                                    <td>$85.00</td>
+                                                    <td><a href="#" class="btn btn-sm btn-outline-primary">View</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>#12347</td>
+                                                    <td>April 2, 2025</td>
+                                                    <td><span class="badge bg-info">Shipped</span></td>
+                                                    <td>$210.00</td>
+                                                    <td><a href="#" class="btn btn-sm btn-outline-primary">View</a></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Orders Section -->
+                            <div class="account-section" id="orders-section">
+                                <div class="section-header">
+                                    <h2>Orders</h2>
+                                </div>
+                                <div class="orders-list">
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Order</th>
+                                                    <th>Date</th>
+                                                    <th>Status</th>
+                                                    <th>Total</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>#12345</td>
+                                                    <td>March 15, 2025</td>
+                                                    <td><span class="badge bg-success">Completed</span></td>
+                                                    <td>$125.00</td>
+                                                    <td><a href="#" class="btn btn-sm btn-outline-primary">View</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>#12346</td>
+                                                    <td>March 20, 2025</td>
+                                                    <td><span class="badge bg-warning">Processing</span></td>
+                                                    <td>$85.00</td>
+                                                    <td><a href="#" class="btn btn-sm btn-outline-primary">View</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>#12347</td>
+                                                    <td>April 2, 2025</td>
+                                                    <td><span class="badge bg-info">Shipped</span></td>
+                                                    <td>$210.00</td>
+                                                    <td><a href="#" class="btn btn-sm btn-outline-primary">View</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>#12348</td>
+                                                    <td>April 10, 2025</td>
+                                                    <td><span class="badge bg-secondary">On Hold</span></td>
+                                                    <td>$45.00</td>
+                                                    <td><a href="#" class="btn btn-sm btn-outline-primary">View</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>#12349</td>
+                                                    <td>April 12, 2025</td>
+                                                    <td><span class="badge bg-danger">Cancelled</span></td>
+                                                    <td>$150.00</td>
+                                                    <td><a href="#" class="btn btn-sm btn-outline-primary">View</a></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Addresses Section -->
+                            <div class="account-section" id="addresses-section">
+                                <div class="section-header">
+                                    <h2>Addresses</h2>
+                                </div>
+                                <div class="addresses">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="address-card">
+                                                <div class="address-header">
+                                                    <h3>Shipping Address</h3>
+                                                    <a href="#" class="edit-address"><i class="fas fa-edit"></i></a>
+                                                </div>
+                                                <div class="address-content">
+                                                    <p>John Doe</p>
+                                                    <p>123 Main Street</p>
+                                                    <p>Apt 4B</p>
+                                                    <p>New York, NY 10001</p>
+                                                    <p>United States</p>
+                                                    <p>Phone: (555) 123-4567</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="address-card">
+                                                <div class="address-header">
+                                                    <h3>Billing Address</h3>
+                                                    <a href="#" class="edit-address"><i class="fas fa-edit"></i></a>
+                                                </div>
+                                                <div class="address-content">
+                                                    <p>John Doe</p>
+                                                    <p>456 Park Avenue</p>
+                                                    <p>Suite 789</p>
+                                                    <p>New York, NY 10022</p>
+                                                    <p>United States</p>
+                                                    <p>Phone: (555) 987-6543</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Wishlist Section -->
+                            <div class="account-section" id="wishlist-section">
+                                <div class="section-header">
+                                    <h2>Wishlist</h2>
+                                </div>
+                                <div class="wishlist-items">
+                                    <div class="row">
+                                        <div class="col-md-4 col-sm-6 mb-4">
+                                            <div class="product-card">
+                                                <div class="product-image-container">
+                                                    <img src="https://source.unsplash.com/random/800x1000/?vintage,dress" alt="Vintage Dress" class="product-image">
+                                                    <button class="btn-wishlist active" aria-label="Remove from wishlist">
+                                                        <i class="fas fa-heart"></i>
+                                                    </button>
+                                                    <button class="btn-quick-view" aria-label="Quick view">
+                                                        <i class="fas fa-eye"></i>
+                                                    </button>
+                                                </div>
+                                                <div class="card-body">
+                                                    <h3 class="card-title"><a href="product.html">1960s Mod Mini Dress</a></h3>
+                                                    <div class="price">$79.99</div>
+                                                    <div class="rating">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star-half-alt"></i>
+                                                        <span>(19)</span>
+                                                    </div>
+                                                    <button class="btn btn-primary btn-add-to-cart">Add to Cart</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-sm-6 mb-4">
+                                            <div class="product-card">
+                                                <div class="product-image-container">
+                                                    <img src="https://source.unsplash.com/random/800x1000/?vintage,jacket" alt="Vintage Jacket" class="product-image">
+                                                    <button class="btn-wishlist active" aria-label="Remove from wishlist">
+                                                        <i class="fas fa-heart"></i>
+                                                    </button>
+                                                    <button class="btn-quick-view" aria-label="Quick view">
+                                                        <i class="fas fa-eye"></i>
+                                                    </button>
+                                                </div>
+                                                <div class="card-body">
+                                                    <h3 class="card-title"><a href="product.html">1980s Leather Biker Jacket</a></h3>
+                                                    <div class="price">
+                                                        <span class="sale-price">$129.99</span>
+                                                        <span class="original-price">$159.99</span>
+                                                    </div>
+                                                    <div class="rating">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <span>(21)</span>
+                                                    </div>
+                                                    <button class="btn btn-primary btn-add-to-cart">Add to Cart</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-sm-6 mb-4">
+                                            <div class="product-card">
+                                                <div class="product-image-container">
+                                                    <img src="https://source.unsplash.com/random/800x1000/?vintage,blouse" alt="Vintage Blouse" class="product-image">
+                                                    <button class="btn-wishlist active" aria-label="Remove from wishlist">
+                                                        <i class="fas fa-heart"></i>
+                                                    </button>
+                                                    <button class="btn-quick-view" aria-label="Quick view">
+                                                        <i class="fas fa-eye"></i>
+                                                    </button>
+                                                </div>
+                                                <div class="card-body">
+                                                    <h3 class="card-title"><a href="product.html">1970s Silk Blouse</a></h3>
+                                                    <div class="price">
+                                                        <span class="sale-price">$42.99</span>
+                                                        <span class="original-price">$54.99</span>
+                                                    </div>
+                                                    <div class="rating">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="far fa-star"></i>
+                                                        <span>(12)</span>
+                                                    </div>
+                                                    <button class="btn btn-primary btn-add-to-cart">Add to Cart</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-sm-6 mb-4">
+                                            <div class="product-card">
+                                                <div class="product-image-container">
+                                                    <img src="https://source.unsplash.com/random/800x1000/?vintage,hat" alt="Vintage Hat" class="product-image">
+                                                    <button class="btn-wishlist active" aria-label="Remove from wishlist">
+                                                        <i class="fas fa-heart"></i>
+                                                    </button>
+                                                    <button class="btn-quick-view" aria-label="Quick view">
+                                                        <i class="fas fa-eye"></i>
+                                                    </button>
+                                                </div>
+                                                <div class="card-body">
+                                                    <h3 class="card-title"><a href="product.html">1950s Fedora Hat</a></h3>
+                                                    <div class="price">$34.99</div>
+                                                    <div class="rating">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star-half-alt"></i>
+                                                        <i class="far fa-star"></i>
+                                                        <span>(7)</span>
+                                                    </div>
+                                                    <button class="btn btn-primary btn-add-to-cart">Add to Cart</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-sm-6 mb-4">
+                                            <div class="product-card">
+                                                <div class="product-image-container">
+                                                    <img src="https://source.unsplash.com/random/800x1000/?vintage,bag" alt="Vintage Bag" class="product-image">
+                                                    <button class="btn-wishlist active" aria-label="Remove from wishlist">
+                                                        <i class="fas fa-heart"></i>
+                                                    </button>
+                                                    <button class="btn-quick-view" aria-label="Quick view">
+                                                        <i class="fas fa-eye"></i>
+                                                    </button>
+                                                </div>
+                                                <div class="card-body">
+                                                    <h3 class="card-title"><a href="product.html">1960s Leather Handbag</a></h3>
+                                                    <div class="price">$45.99</div>
+                                                    <div class="rating">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star-half-alt"></i>
+                                                        <span>(15)</span>
+                                                    </div>
+                                                    <button class="btn btn-primary btn-add-to-cart">Add to Cart</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Account Details Section -->
+                            <div class="account-section" id="account-details-section">
+                                <div class="section-header">
+                                    <h2>Account Details</h2>
+                                </div>
+                                <div class="account-details-form">
+                                    <form id="accountDetailsForm">
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <label for="accountFirstName" class="form-label">First Name</label>
+                                                <input type="text" class="form-control" id="accountFirstName" value="John" required>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <label for="accountLastName" class="form-label">Last Name</label>
+                                                <input type="text" class="form-control" id="accountLastName" value="Doe" required>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="accountDisplayName" class="form-label">Display Name</label>
+                                            <input type="text" class="form-control" id="accountDisplayName" value="John Doe">
+                                            <div class="form-text">This will be how your name will be displayed in the account section and in reviews.</div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="accountEmail" class="form-label">Email address</label>
+                                            <input type="email" class="form-control" id="accountEmail" value="john.doe@example.com" required>
+                                        </div>
+                                        <h3 class="password-change-title">Password Change</h3>
+                                        <div class="mb-3">
+                                            <label for="currentPassword" class="form-label">Current Password</label>
+                                            <input type="password" class="form-control" id="currentPassword">
+                                            <div class="form-text">Leave blank to leave unchanged.</div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="newPassword" class="form-label">New Password</label>
+                                            <input type="password" class="form-control" id="newPassword">
+                                            <div class="form-text">Leave blank to leave unchanged.</div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="confirmNewPassword" class="form-label">Confirm New Password</label>
+                                            <input type="password" class="form-control" id="confirmNewPassword">
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="footer-widget">
+                            <div class="footer-logo">
+                                <h2>NOVARI</h2>
+                            </div>
+                            <p>Discover authentic vintage clothing and accessories from the 1950s to the 1990s. Each piece tells a unique story and brings timeless style to your wardrobe.</p>
+                            <div class="social-icons">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6">
+                        <div class="footer-widget">
+                            <h4 class="widget-title">Shop</h4>
+                            <ul class="widget-list">
+                                <li><a href="shop.html?category=women">Women</a></li>
+                                <li><a href="shop.html?category=men">Men</a></li>
+                                <li><a href="shop.html?category=accessories">Accessories</a></li>
+                                <li><a href="shop.html?newArrivals=true">New Arrivals</a></li>
+                                <li><a href="shop.html?onSale=true">Sale</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6">
+                        <div class="footer-widget">
+                            <h4 class="widget-title">Information</h4>
+                            <ul class="widget-list">
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="contact.html">Contact Us</a></li>
+                                <li><a href="#">Shipping & Returns</a></li>
+                                <li><a href="#">Terms & Conditions</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="footer-widget">
+                            <h4 class="widget-title">Newsletter</h4>
+                            <p>Subscribe to our newsletter to receive updates on new arrivals, special offers and vintage fashion tips.</p>
+                            <form class="newsletter-form">
+                                <div class="input-group">
+                                    <input type="email" class="form-control" placeholder="Your email address" required>
+                                    <button class="btn btn-primary" type="submit">Subscribe</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-6">
+                        <p class="copyright">© 2025 Novari Vintage. All rights reserved.</p>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="payment-methods">
+                            <img src="https://via.placeholder.com/250x30" alt="Payment Methods">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

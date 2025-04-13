@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart | Novari Vintage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/toggle-consistency.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="header-top-left">
+                            <p><i class="fas fa-truck"></i> Free shipping on orders over $100</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="header-top-right">
+                            <ul class="header-top-menu">
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="account.html">My Account</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-middle">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-6">
+                        <div class="logo">
+                            <a href="index.html">
+                                <h1>NOVARI</h1>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 d-none d-md-block">
+                        <div class="search-form">
+                            <form action="shop.html" method="get">
+                                <input type="text" name="search" placeholder="Search for products..." class="search-input">
+                                <button type="submit"><i class="fas fa-search"></i></button>
+                            </form>
+                            <div class="search-suggestions"></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-6">
+                        <div class="header-actions">
+                            <a href="#" class="search-toggle d-md-none"><i class="fas fa-search"></i></a>
+                            <a href="account.html" class="nav-icon" title="Account"><i class="far fa-user"></i></a>
+                            <a href="favorites.html" class="nav-icon" title="Favorites"><i class="far fa-heart"></i><span class="favorites-count">0</span></a>
+                            <a href="cart.html" class="nav-icon active" title="Cart"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
+                            <button class="menu-toggle d-lg-none"><i class="fas fa-bars"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-bottom">
+            <div class="container">
+                <nav class="main-nav">
+                    <ul class="main-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html?category=women">Women</a></li>
+                        <li><a href="shop.html?category=men">Men</a></li>
+                        <li><a href="shop.html?category=accessories">Accessories</a></li>
+                        <li><a href="shop.html">All Vintage</a></li>
+                        <li><a href="shop.html?onSale=true">Sale</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="container">
+            <ul class="mobile-menu-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html?category=women">Women</a></li>
+                <li><a href="shop.html?category=men">Men</a></li>
+                <li><a href="shop.html?category=accessories">Accessories</a></li>
+                <li><a href="shop.html">All Vintage</a></li>
+                <li><a href="shop.html?onSale=true">Sale</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="account.html">My Account</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="cart-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="page-title">
+                        <h1>Shopping Cart</h1>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cart Content -->
+            <div class="cart-content">
+                <!-- Empty State (will be hidden when items exist) -->
+                <div class="empty-cart" id="emptyCart">
+                    <div class="empty-state">
+                        <div class="empty-state-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <h2>Your Cart is Empty</h2>
+                        <p>You haven't added any items to your cart yet. Browse our collection and find your perfect vintage pieces!</p>
+                        <a href="shop.html" class="btn btn-primary">Start Shopping</a>
+                    </div>
+                </div>
+
+                <!-- Cart Items (will be shown when items exist) -->
+                <div class="cart-items" id="cartItems">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="cart-table">
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Product</th>
+                                                <th>Price</th>
+                                                <th>Quantity</th>
+                                                <th>Subtotal</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="cartTableBody">
+                                            <!-- Sample Cart Item 1 -->
+                                            <tr data-product-id="1">
+                                                <td>
+                                                    <div class="cart-product">
+                                                        <div class="cart-product-img">
+                                                            <img src="https://source.unsplash.com/random/100x100/?vintage,dress" alt="1960s Mod Mini Dress">
+                                                        </div>
+                                                        <div class="cart-product-info">
+                                                            <h4><a href="product.html?id=1">1960s Mod Mini Dress</a></h4>
+                                                            <p>Size: S | Color: Blue</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="cart-price">$79.99</div>
+                                                </td>
+                                                <td>
+                                                    <div class="cart-quantity">
+                                                        <div class="quantity-selector">
+                                                            <button class="quantity-decrease" data-product-id="1">-</button>
+                                                            <input type="number" value="1" min="1" max="10" data-product-id="1">
+                                                            <button class="quantity-increase" data-product-id="1">+</button>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="cart-subtotal">$79.99</div>
+                                                </td>
+                                                <td>
+                                                    <div class="cart-remove">
+                                                        <button class="btn-remove" data-product-id="1"><i class="fas fa-times"></i></button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <!-- Sample Cart Item 2 -->
+                                            <tr data-product-id="2">
+                                                <td>
+                                                    <div class="cart-product">
+                                                        <div class="cart-product-img">
+                                                            <img src="https://source.unsplash.com/random/100x100/?vintage,jacket" alt="1980s Leather Biker Jacket">
+                                                        </div>
+                                                        <div class="cart-product-info">
+                                                            <h4><a href="product.html?id=2">1980s Leather Biker Jacket</a></h4>
+                                                            <p>Size: M | Color: Black</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="cart-price">$129.99</div>
+                                                </td>
+                                                <td>
+                                                    <div class="cart-quantity">
+                                                        <div class="quantity-selector">
+                                                            <button class="quantity-decrease" data-product-id="2">-</button>
+                                                            <input type="number" value="1" min="1" max="10" data-product-id="2">
+                                                            <button class="quantity-increase" data-product-id="2">+</button>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="cart-subtotal">$129.99</div>
+                                                </td>
+                                                <td>
+                                                    <div class="cart-remove">
+                                                        <button class="btn-remove" data-product-id="2"><i class="fas fa-times"></i></button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <!-- Sample Cart Item 3 -->
+                                            <tr data-product-id="3">
+                                                <td>
+                                                    <div class="cart-product">
+                                                        <div class="cart-product-img">
+                                                            <img src="https://source.unsplash.com/random/100x100/?vintage,blouse" alt="1970s Silk Blouse">
+                                                        </div>
+                                                        <div class="cart-product-info">
+                                                            <h4><a href="product.html?id=3">1970s Silk Blouse</a></h4>
+                                                            <p>Size: M | Color: Cream</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="cart-price">$42.99</div>
+                                                </td>
+                                                <td>
+                                                    <div class="cart-quantity">
+                                                        <div class="quantity-selector">
+                                                            <button class="quantity-decrease" data-product-id="3">-</button>
+                                                            <input type="number" value="2" min="1" max="10" data-product-id="3">
+                                                            <button class="quantity-increase" data-product-id="3">+</button>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="cart-subtotal">$85.98</div>
+                                                </td>
+                                                <td>
+                                                    <div class="cart-remove">
+                                                        <button class="btn-remove" data-product-id="3"><i class="fas fa-times"></i></button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="cart-actions">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="coupon">
+                                            <input type="text" class="form-control" placeholder="Coupon code" id="couponCode">
+                                            <button class="btn btn-outline-primary" id="applyCoupon">Apply Coupon</button>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="cart-buttons">
+                                            <button class="btn btn-outline-secondary" id="updateCart">Update Cart</button>
+                                            <button class="btn btn-danger" id="clearCart">Clear Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- You May Also Like -->
+                            <div class="you-may-like">
+                                <h3>You May Also Like</h3>
+                                <div class="row">
+                                    <!-- Recommended Product 1 -->
+                                    <div class="col-md-4 col-sm-6 mb-4">
+                                        <div class="product-card">
+                                            <div class="product-image-container">
+                                                <img src="https://source.unsplash.com/random/300x400/?vintage,hat" alt="1950s Fedora Hat" class="product-image">
+                                                <button class="btn-wishlist" aria-label="Add to wishlist" data-product-id="4">
+                                                    <i class="far fa-heart"></i>
+                                                </button>
+                                                <button class="btn-quick-view" aria-label="Quick view" data-product-id="4">
+                                                    <i class="fas fa-eye"></i>
+                                                </button>
+                                            </div>
+                                            <div class="card-body">
+                                                <h3 class="card-title"><a href="product.html?id=4">1950s Fedora Hat</a></h3>
+                                                <div class="price">$34.99</div>
+                                                <button class="btn btn-primary btn-add-to-cart" data-product-id="4">Add to Cart</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Recommended Product 2 -->
+                                    <div class="col-md-4 col-sm-6 mb-4">
+                                        <div class="product-card">
+                                            <div class="product-image-container">
+                                                <img src="https://source.unsplash.com/random/300x400/?vintage,bag" alt="1960s Leather Handbag" class="product-image">
+                                                <button class="btn-wishlist" aria-label="Add to wishlist" data-product-id="5">
+                                                    <i class="far fa-heart"></i>
+                                                </button>
+                                                <button class="btn-quick-view" aria-label="Quick view" data-product-id="5">
+                                                    <i class="fas fa-eye"></i>
+                                                </button>
+                                            </div>
+                                            <div class="card-body">
+                                                <h3 class="card-title"><a href="product.html?id=5">1960s Leather Handbag</a></h3>
+                                                <div class="price">$45.99</div>
+                                                <button class="btn btn-primary btn-add-to-cart" data-product-id="5">Add to Cart</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Recommended Product 3 -->
+                                    <div class="col-md-4 col-sm-6 mb-4">
+                                        <div class="product-card">
+                                            <div class="product-image-container">
+                                                <img src="https://source.unsplash.com/random/300x400/?vintage,scarf" alt="1950s Silk Scarf" class="product-image">
+                                                <button class="btn-wishlist" aria-label="Add to wishlist" data-product-id="9">
+                                                    <i class="far fa-heart"></i>
+                                                </button>
+                                                <button class="btn-quick-view" aria-label="Quick view" data-product-id="9">
+                                                    <i class="fas fa-eye"></i>
+                                                </button>
+                                            </div>
+                                            <div class="card-body">
+                                                <h3 class="card-title"><a href="product.html?id=9">1950s Silk Scarf</a></h3>
+                                                <div class="price">$28.99</div>
+                                                <button class="btn btn-primary btn-add-to-cart" data-product-id="9">Add to Cart</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="cart-summary">
+                                <h3>Cart Summary</h3>
+                                <div class="summary-item">
+                                    <span class="summary-label">Subtotal</span>
+                                    <span class="summary-value" id="cartSubtotal">$295.96</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span class="summary-label">Shipping</span>
+                                    <span class="summary-value" id="shippingCost">$5.99</span>
+                                </div>
+                                <div class="summary-item discount-item" id="discountRow" style="display: none;">
+                                    <span class="summary-label">Discount</span>
+                                    <span class="summary-value" id="discountAmount">-$0.00</span>
+                                </div>
+                                <div class="summary-item total-item">
+                                    <span class="summary-label">Total</span>
+                                    <span class="summary-value" id="cartTotal">$301.95</span>
+                                </div>
+                                <div class="shipping-options">
+                                    <h4>Shipping Options</h4>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="shippingOption" id="standardShipping" value="standard" checked>
+                                        <label class="form-check-label" for="standardShipping">
+                                            Standard Shipping - $5.99
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="shippingOption" id="expressShipping" value="express">
+                                        <label class="form-check-label" for="expressShipping">
+                                            Express Shipping - $12.99
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="shippingOption" id="nextDayShipping" value="nextDay">
+                                        <label class="form-check-label" for="nextDayShipping">
+                                            Next Day Shipping - $19.99
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="free-shipping-message" id="freeShippingMessage">
+                                    <i class="fas fa-truck"></i> You're $4.04 away from free shipping!
+                                </div>
+                                <div class="checkout-button">
+                                    <a href="checkout.html" class="btn btn-primary btn-block">Proceed to Checkout</a>
+                                </div>
+                                <div class="secure-checkout">
+                                    <p><i class="fas fa-lock"></i> Secure Checkout</p>
+                                    <div class="payment-icons">
+                                        <i class="fab fa-cc-visa"></i>
+                                        <i class="fab fa-cc-mastercard"></i>
+                                        <i class="fab fa-cc-amex"></i>
+                                        <i class="fab fa-cc-paypal"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Quick View Modal -->
+    <div class="modal fade" id="quickViewModal" tabindex="-1" aria-labelledby="quickViewModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="quickViewModalLabel">Product Quick View</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="quick-view-image">
+                                <img src="" alt="Product Image" id="quickViewImage" class="img-fluid">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="quick-view-content">
+                                <h2 id="quickViewTitle"></h2>
+                                <div class="quick-view-price" id="quickViewPrice"></div>
+                                <div class="quick-view-rating" id="quickViewRating"></div>
+                                <div class="quick-view-description" id="quickViewDescription"></div>
+                                <div class="quick-view-options">
+                                    <div class="size-options mb-3">
+                                        <h6>Size:</h6>
+                                        <div class="size-selector" id="quickViewSizes"></div>
+                                    </div>
+                                    <div class="color-options mb-3">
+                                        <h6>Color:</h6>
+                                        <div class="color-selector" id="quickViewColors"></div>
+                                    </div>
+                                    <div class="quantity-options mb-3">
+                                        <h6>Quantity:</h6>
+                                        <div class="quantity-selector">
+                                            <button class="quantity-decrease">-</button>
+                                            <input type="number" value="1" min="1" max="10" id="quickViewQuantity">
+                                            <button class="quantity-increase">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="quick-view-actions">
+                                    <button class="btn btn-primary btn-add-to-cart-modal" id="quickViewAddToCart">Add to Cart</button>
+                                    <button class="btn btn-outline-primary btn-view-details" id="quickViewDetails">View Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" id="cartUpdateToast">
+            <div class="toast-header">
+                <i class="fas fa-shopping-cart me-2 text-primary"></i>
+                <strong class="me-auto">Novari Vintage</strong>
+                <small>Just now</small>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                Your cart has been updated!
+            </div>
+        </div>
+        <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" id="couponToast">
+            <div class="toast-header">
+                <i class="fas fa-tag me-2 text-success"></i>
+                <strong class="me-auto">Novari Vintage</strong>
+                <small>Just now</small>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body" id="couponToastMessage">
+                Coupon applied successfully!
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="footer-widget">
+                            <div class="footer-logo">
+                                <h2>NOVARI</h2>
+                            </div>
+                            <p>Discover authentic vintage clothing and accessories from the 1950s to the 1990s. Each piece tells a unique story and brings timeless style to your wardrobe.</p>
+                            <div class="social-icons">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6">
+                        <div class="footer-widget">
+                            <h4 class="widget-title">Shop</h4>
+                            <ul class="widget-list">
+                                <li><a href="shop.html?category=women">Women</a></li>
+                                <li><a href="shop.html?category=men">Men</a></li>
+                                <li><a href="shop.html?category=accessories">Accessories</a></li>
+                                <li><a href="shop.html?newArrivals=true">New Arrivals</a></li>
+                                <li><a href="shop.html?onSale=true">Sale</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6">
+                        <div class="footer-widget">
+                            <h4 class="widget-title">Information</h4>
+                            <ul class="widget-list">
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="contact.html">Contact Us</a></li>
+                                <li><a href="#">Shipping & Returns</a></li>
+                                <li><a href="#">Terms & Conditions</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="footer-widget">
+                            <h4 class="widget-title">Newsletter</h4>
+                            <p>Subscribe to our newsletter to receive updates on new arrivals, special offers and vintage fashion tips.</p>
+                            <form class="newsletter-form">
+                                <div class="input-group">
+                                    <input type="email" class="form-control" placeholder="Your email address" required>
+                                    <button class="btn btn-primary" type="submit">Subscribe</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-6">
+                        <p class="copyright">© 2025 Novari Vintage. All rights reserved.</p>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="payment-methods">
+                            <img src="https://via.placeholder.com/250x30" alt="Payment Methods">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
